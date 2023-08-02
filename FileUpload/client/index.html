@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload</title>
+  </head>
+  <body>
+    <h1>Demo of File Upload</h1>
+    <form name="fileinfo" enctype="multipart/form-data" method="post">
+      <p>
+        <label
+          ><input
+            type="email"
+            autocomplete="on"
+            name="userId"
+            placeholder="email"
+            required
+            size="32"
+            maxlength="64"
+        /></label>
+      </p>
+      <p>
+        <label
+          >Custom File Label:<input
+            type="text"
+            size="12"
+            maxlength="32"
+            name="filelabel"
+        /></label>
+      </p>
+      <p>
+        <label>File to Stash:<input type="file" name="file" required /></label>
+      </p>
+      <p><input type="submit" value="Stash the file" /></p>
+    </form>
+    <div id="output"></div>
+    <div>
+        <p>Resources</p>
+        <ol>
+            <li>https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects</li>
+        </ol>
+    </div>
+
+    <script>
+        const form = document.forms.namedItem('fileinfo');
+
+        form.addEventListener('submit',(event)=>{
+            
+            console.log("submit event--",event)
+            event.preventDefault();
+        })
+    </script>
+  </body>
+</html>
